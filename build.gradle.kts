@@ -27,6 +27,7 @@ repositories {
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-validation")
 	implementation("org.springframework.boot:spring-boot-starter-webmvc")
+  implementation("org.springframework.cloud:spring-cloud-starter-openfeign:5.0.1")
 	implementation("org.modelmapper:modelmapper:3.2.6")
 	compileOnly("org.projectlombok:lombok")
 	runtimeOnly("org.postgresql:postgresql")

@@ -17,7 +17,7 @@ import com.employee_microservice.util.MapperEmployee;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/employee")
 public class ControllerEmployee {
 
   @Autowired
@@ -31,9 +31,9 @@ public class ControllerEmployee {
     return ResponseEntity.ok((serviceEmployee.getEmployeeForID(idEmployee)));
   }
 
-  @PostMapping(path = "/add", produces = "application/json")
-  public ResponseEntity<EmployeeDtoRequest> updateEmployee(@Valid @RequestBody EmployeeDtoRequest employeeDto) {
-    return ResponseEntity.ok(mapperEmployee.getEmployeeToDto(serviceEmployee.saveEmployee(employeeDto)));
+  @PostMapping(path = "/save/", produces = "application/json")
+  public ResponseEntity<EmployeeDtoResponse> updateEmployee(@Valid @RequestBody EmployeeDtoRequest employeeDto) {
+    return ResponseEntity.ok((serviceEmployee.saveEmployee(employeeDto)));
   }
 
 }

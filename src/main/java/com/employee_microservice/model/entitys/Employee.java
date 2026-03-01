@@ -1,14 +1,7 @@
 package com.employee_microservice.model.entitys;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import jakarta.persistence.*;
+import lombok.*;
 
 @Entity
 @Table(name = "employees")
@@ -17,41 +10,40 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
+
   @Id
   @Column(name = "id_employee")
-  private Long id_employee;
+  private Long idEmployee;
 
-  @Column(name = "email", nullable = false)
+  @Column(nullable = false, unique = true)
   private String email;
 
   @Column(name = "name_one", nullable = false, length = 100)
-  private String name_one;
+  private String nameOne;
 
-  @Column(name = "other_name", nullable = true, length = 100)
-  private String other_name;
+  @Column(name = "other_name", length = 100)
+  private String otherName;
 
   @Column(name = "first_surname", nullable = false, length = 100)
-  private String first_surname;
+  private String firstSurname;
 
   @Column(name = "second_surname", nullable = false, length = 100)
-  private String second_surname;
+  private String secondSurname;
 
-  @Column(name = "telephone", nullable = false, length = 20)
+  @Column(nullable = false, length = 20)
   private String telephone;
 
-  @Column(name = "address", nullable = true, length = 150)
+  @Column(length = 150)
   private String address;
 
-  @Column(name = "postcode")
   private Integer postcode;
 
-  @Column(name = "citye_name", nullable = false)
-  private String city_name;
+  @Column(name = "city_name", nullable = false)
+  private String cityName;
 
-  @Column(name = "id_position", nullable = false)
-  private String position;
+  @Column(name = "position_name", nullable = false)
+  private String positionName;
 
-  @JoinColumn(name = "id_department", nullable = false)
-  private Long department_id;
-
+  @Column(name = "id_department", nullable = false)
+  private Long idDepartment;
 }

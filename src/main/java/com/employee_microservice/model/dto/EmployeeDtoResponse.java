@@ -1,21 +1,18 @@
 package com.employee_microservice.model.dto;
 
-import com.sun.istack.NotNull;
-
 import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.NotNull;
 
 public record EmployeeDtoResponse(
-        Long id_employee,
-        @NotNull String name_one,
-        @Null String other_name,
-        @NotNull String first_surname,
-        @NotNull String second_surname,
-        @NotNull String telephone,
-        @Null String address,
-        Integer postcode,
-        @NotNull @Email String email,
-        @Null String city_name,
-        @NotNull String position_name,
-        Long department_id) {
+                                                                String name_one,
+                                                                String other_name,
+                                                                String first_surname,
+                                                                String second_surname,
+                                                                String telephone,
+                                                                String address,
+                                                                Integer postcode,
+                                                                @Email String email,
+                                                                String city_name,
+                                                                String position_name,
+                                                                Long department_id) {
 }
